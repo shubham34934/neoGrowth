@@ -11,14 +11,21 @@ class Modal extends React.Component {
     }
   }
  
+  componentWillReceiveProps(nextProps){
+    if(nextProps.show!==this.state.show){
+      this.setState({
+        show:nextProps.show
+      })
+    }
+  }
   render() {
     let modalReject= null; 
-    if(this.props.show==="true"){
+    if(this.state.show===true){
         modalReject= <div className="modal-container">
-              <div className="modal">
-                   {this.props.children}
-                   </div>         
-              </div>
+                      <div className="modal">
+                          {this.props.children}
+                      </div>         
+                     </div>
     }
     return (
       <div>

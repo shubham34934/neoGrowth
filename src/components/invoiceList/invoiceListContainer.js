@@ -3,13 +3,12 @@ import './../../App.scss';
 import './../../globalCSS/global.scss';
 import './invoiceList.scss';
 import DropDown from '../dropDown/dropDown';
-import invoicesData from '../../jasonData/invoicesJason';
 import { Route, Link } from "react-router-dom";
-import Invoice from '../invoice/invoice';
 import InvoiceTable from './invoiceTable';
 import NavBar from './../navBar/navBar';
 import { withRouter } from "react-router-dom";
 import PropTypes from 'prop-types';
+
 const axios = require('axios');
 
 
@@ -17,13 +16,15 @@ const axios = require('axios');
 class InvoiceListContainer extends React.Component {
   constructor(props) {
     super(props);
+    console.log(localStorage);
     this.state={
-      userDetails:this.props.location.state.detail.userDetails,
+      userDetails:"JSON.parse(localStorage.userDetails)",
       invoicesData:[],
       filteredInvoices:[],
       activeFilter: "All",
       showDropDown:false,
     }
+
   } 
 
   //  RA and RASignatory functions#########
@@ -67,15 +68,16 @@ class InvoiceListContainer extends React.Component {
 // Life Cycle Methods#########
 
   componentDidMount(){
-    axios.get('http://18.218.231.206/api/invoices', 
+    axios.get('http://18.218.231.206/api/ra_signatory/invoices', 
       { 
         headers:{"Authorization": `Bearer ${localStorage.token}`},
         params:{
-          invoice_ra_id:this.state.userDetails.userId
+          invoice_ra_signatory_id:2
         }
       }
       )
       .then( resp => {
+          console.log(resp.data)
           if(resp.data !== null){
             this.setState(
               {
@@ -104,6 +106,7 @@ class InvoiceListContainer extends React.Component {
   // Render Method#########
 
   render() {
+    console.log(this.state.filteredInvoices);
     const filters=["All","Review Pending","Reviewed","Approved","Approval Pending"];
     let header=       
         <div className="raHeader">
@@ -142,10 +145,10 @@ class InvoiceListContainer extends React.Component {
       </div>
     }
     // console.log(this.state.filteredInvoices);
-    // console.log(this.state.invoicesData);
     return (
+      
       <div className="app">
-        <NavBar showAvatar={true} userDetails={this.state.userDetails}/>
+        <NavBar showAvatar={true}/>
         <div className="appContainer-margin"> 
           <div className="invoiceList-container">
             <div className="invoiceList-header">

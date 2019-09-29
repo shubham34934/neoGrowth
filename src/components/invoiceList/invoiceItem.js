@@ -7,9 +7,6 @@ import { withRouter } from "react-router-dom";
 import getDueDate from './../../utlities/dateChanger';
 import getInvoiceName from './../../utlities/stringChanger';
 
-
-
-
 class InvoiceItem extends React.Component {
   constructor(props) {
     super(props);
@@ -87,7 +84,7 @@ class InvoiceItem extends React.Component {
          ?<input type="checkbox" className="financeUpload-checkbox" checked={this.state.active} onClick={this.handleCheckboxClick}/>
          : null 
       }
-      <Link style={linkStyle} to={{pathname:"/invoice", state:{invoiceDetails:this.props.invoiceDetails,userDetails:this.props.userDetails}}}>
+      <Link style={linkStyle} to={{pathname:"/invoice", state:{invoiceDetails:this.props.invoiceDetails}}}>
         <div className="invoiceItem-card">
             <div className="card-item">{getInvoiceName(this.props.invoiceDetails.invoice_name)}</div>
             <div className="card-item">{this.props.invoiceDetails.invoice_date}</div>

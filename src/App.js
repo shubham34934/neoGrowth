@@ -4,7 +4,7 @@ import './globalCSS/global.scss';
 import Login from './components/login/login';
 import NavBar from './components/navBar/navBar';
 import InvoiceListContainer from './components/invoiceList/invoiceListContainer';
-import Invoice from './components/invoice/invoice';
+import InvoiceContainer from './components/invoice/invoiceContainer';
 import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
 import {createBrowserHistory} from "history";
 
@@ -32,7 +32,7 @@ function App() {
         />   
         <Route exact path="/invoice" render={()=>
           <div>
-            <Invoice/>
+            <InvoiceContainer/>
           </div>}
         /> 
       </Switch>

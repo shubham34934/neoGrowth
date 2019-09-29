@@ -129,27 +129,6 @@
 		color:black;
 		align-items: center;
 		border-radius: 5px;
-		.reviewed{
-			@include flexRow;
-			justify-content: flex-start;
-			.check-circle{
-				height:20px;
-				width:20px;
-				border-radius: 100%;
-				background-color:$successColor-green;
-				color:white;
-				font-weight: 100;
-				text-align: center;
-			}
-			.reviewed-text{
-				color:$successColor-green;
-				font-weight: 500;
-				margin-right:10px;
-			}		
-		}
-		.pending-text{
-			color:$primaryThemeColor-light;
-		}
 		&:hover{
 			background-color: rgba(70,70,70,0.071);
 			color:black;

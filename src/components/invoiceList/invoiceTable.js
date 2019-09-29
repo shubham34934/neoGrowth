@@ -4,7 +4,6 @@ import './../../globalCSS/global.scss';
 import './invoiceList.scss';
 import InvoiceItem from './invoiceItem';
 import DropDown from './../dropDown/dropDown';
-import Invoice from './../invoice/invoice';
 import PropTypes from 'prop-types';
 
 class InvoiceTable extends React.Component {
@@ -29,7 +28,6 @@ class InvoiceTable extends React.Component {
        }
       );  
     }   
-    console.log(invoices);
     return invoices
   }
 

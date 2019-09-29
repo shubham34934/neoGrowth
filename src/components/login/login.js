@@ -3,11 +3,9 @@ import './../../App.scss';
 import './../../globalCSS/global.scss';
 import './login.scss';
 import NeoGrowthLogo from './../../assets/NeoGrowth.png';
-import users from './../../jasonData/usersJason';
 import { withRouter } from "react-router-dom";
 import NavBar from './../navBar/navBar';
 import InvoiceListContainer from './../invoiceList/invoiceListContainer';
-import Invoice from './../invoice/invoice';
 import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
 import {createBrowserHistory} from "history";
 
@@ -29,10 +27,10 @@ class Login extends React.Component {
       password:this.state.password
       }).then( resp => {
       if(resp.data.token !== null){
-        this.props.history.push({pathname:"/invoiceList", state:{detail:resp.data}});
         localStorage.setItem('token', resp.data.token);
-      }
-      
+        localStorage.setItem('userDetails', JSON.stringify(resp.data.userDetails));
+        this.props.history.push({pathname:"/invoiceList"}); 
+      }   
       else{
       alert("invalid password!")
       }
