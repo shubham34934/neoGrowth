@@ -1,0 +1,165 @@
+@import './../../globalCSS/global.scss';
+
+.invoiceList-container{
+	width:100%;
+	margin: 35px auto;
+	.invoiceList-header{
+		margin-bottom:20px;
+		max-width: 100%;
+		@include flexRow;
+		justify-content: space-between;
+		align-self: center;
+		align-items: center;
+		color: #321D77;
+		.invoice-title{
+			font-size: 20px;
+		}
+		.financeHeader{
+			@include flexRow;
+			width:100%;
+			justify-content: space-between;
+			.leftItems{
+
+              .financeSort-btns{
+				  margin-top:20px;
+				  @include flexRow;
+				  .pending,.uploaded{
+					  @include btn;
+				   }
+			  }
+			}
+			.rightItems{
+				align-self: flex-end;
+				.upload{
+					@include btn;
+				}
+				
+			}
+		}
+
+		.raHeader{
+			@include flexRow;
+			width:100%;
+			justify-content: space-between;
+			.invoice-title{
+               margin:0;
+			}
+		}
+		.filtering{
+			position: relative;
+			@include flexRow;
+			align-items: center;
+			.filterBy-text{
+			  @include flexRow;
+			  margin-right: 20px;
+			}
+			.filter-container{
+				.chooseFilter{
+				   min-width: 200px;
+				   @include flexRow;
+				   justify-content: space-between;
+				   align-items: center;
+				   padding: 5px 10px;
+				   border: 1px solid rgba(0,0,0,0.05);
+				   color:#6045E2;
+				   font-weight: 500;
+				   border-radius: 5px;
+				   box-shadow: inset 1px 1px 5px rgba(0,0,0,0.05);
+				   .fa{
+					   color:$successColor-green;
+				   }
+				}		  
+			}
+		}
+	}
+    // .............................................
+// Invoice List Item CSS 
+	.card-item{
+		width:16.666%;
+		flex-grow: 1;
+	}
+
+    @mixin inputCheckbox{
+	  
+	}
+	.listWith-checkbox{
+		position: relative;
+		input{
+			margin-right: 20px;
+			margin-left: 10px;
+			position: absolute;
+			top:50%;
+			left:0;
+			transform: translateY(-50%);
+			height: 18px;
+			width: 18px;
+		}
+	}
+	.invoiceItem-header{
+		@include flexRow;
+		justify-content: space-between;
+		background-color: transparent;
+		padding:5px 15px;
+		padding-left: 35px;
+		font-weight: 500;
+		color:#321D77;
+		align-items: center;
+		position: relative;
+		input[type="checkbox"]{
+			margin-right: 20px;
+			margin-left: 10px;
+			position: absolute;
+			top:50%;
+			left:0;
+			transform: translateY(-50%);
+			height: 18px;
+			width: 18px;
+		}
+		.fa{
+			margin-right: 5px;
+		}
+	}
+	.invoiceItem-card{
+		@include flexRow;
+		background-color: white;
+		padding:25px 15px;
+		padding-left: 35px;
+		box-shadow: 2px 2px 5px rgba(0,0,0,0.05);
+		margin-top: 10px;
+		color:black;
+		align-items: center;
+		border-radius: 5px;
+		.reviewed{
+			@include flexRow;
+			justify-content: flex-start;
+			.check-circle{
+				height:20px;
+				width:20px;
+				border-radius: 100%;
+				background-color:$successColor-green;
+				color:white;
+				font-weight: 100;
+				text-align: center;
+			}
+			.reviewed-text{
+				color:$successColor-green;
+				font-weight: 500;
+				margin-right:10px;
+			}		
+		}
+		.pending-text{
+			color:$primaryThemeColor-light;
+		}
+		&:hover{
+			background-color: rgba(70,70,70,0.071);
+			color:black;
+			box-shadow: 2px 2px 5px rgba(0,0,0,0.05);
+			.reviewed-text,.pending-text{
+				font-weight: 500;
+			}
+		}		
+	}
+	
+}
+
+

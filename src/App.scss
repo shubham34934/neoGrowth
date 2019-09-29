@@ -1,0 +1,18 @@
+@import url(https://fonts.googleapis.com/css?family=Poppins&display=swap); 
+@import './globalCSS/global.scss';
+
+*{
+    box-sizing: border-box;
+    font-family: 'Poppins';
+    font-family:'Poppins';
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    margin:0;
+    padding:0;
+}
+
+.app{
+    position: relative;
+    background-color:$bg-color;
+    min-height: 100vh;
+}

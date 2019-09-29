@@ -1,0 +1,126 @@
+@import './../../globalCSS/global.scss';
+
+.invoice-container{
+	width:100%;
+	.invoice-header{
+		max-width: 100%;
+		margin: 50px auto;
+		display:flex;
+		flex-flow: row;
+		justify-content: space-between;
+		align-self: center;
+		align-items: center;
+		h1{
+			font-size: 20px;
+			color: #321D77;
+		}
+		.sort{
+			display: flex;
+			flex-flow: row;
+			.sortInput{
+			  display: flex;
+			  flex-flow: row;
+			  justify-content: space-between;
+			  width:150px;
+			  background-color: white;
+			  padding: 2px;
+			  margin-left: 10px;
+			}
+		}
+	}
+}
+.buttons{
+	display: flex;
+	flex-direction: row;
+}
+
+.reject-btn{
+	@include btn;
+	width:100px;
+	background-color: white;
+	color:#FF7474;
+	border:1px solid #FF7474;
+	font-size: 12px;
+}
+
+.review-btn{
+	@include btn;
+	width:140px;
+	margin-left: 10px;
+	background-color:$primaryThemeColor-light;
+	color:white;
+	font-size: 12px;
+
+}
+
+.back{
+	display: flex;
+	flex-direction: row;
+	align-items: center;
+	.fa{
+		margin-right: 10px;
+	}
+}
+.pdf-viewer{
+	background-color: white;
+	overflow-y: hidden;
+	width:100%;
+	max-height:700px;
+	border:1px solid rgba(1,1,1,0.03);
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	box-shadow: 2px 2px 10px rgba(1,1,1,0.03);
+	margin-bottom:25px;
+}
+
+.comment-container{
+	background-color: white;
+	width:100%;
+	min-height:100px;
+	border:1px solid rgba(1,1,1,0.03);
+	box-shadow: 2px 2px 10px rgba(1,1,1,0.03);
+	padding:15px;
+	display: flex;
+	flex-direction: column;
+	.rejected-text{
+		color:grey;
+		.rejected{
+			color:$failColor-red;
+		}
+	}
+	.comment{
+		color:black;
+	}
+}
+
+.rejectComment{
+	min-height: 100px;
+	border: 1px solid rgba(1,1,1,0.03);
+	width:100%;
+	margin-bottom: 20px;
+}
+
+.invoiceReviewed{
+	display: flex;
+	flex-direction: column;
+	justify-content: space-between;
+     .successStatus{
+		 display: flex;
+		 flex-direction: row;
+	 }
+	.check-circle{
+	   height:20px;
+	   width:20px;
+	   border-radius: 100%;
+	   background-color:$successColor-green;
+	   color:white;
+	   font-weight: 100;
+	   text-align: center;
+	}
+	.invoiceReviewed-text{
+		color:grey;;
+		font-weight: 500;
+		margin-left:15px;
+	}
+}

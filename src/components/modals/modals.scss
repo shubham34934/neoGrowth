@@ -1,0 +1,25 @@
+
+.modal-container{
+  position:fixed;
+  width:100vw;
+  height:100vh;
+  top:0;
+  left:0;
+  background-color:rgba(1,1,1,0.2)
+}
+.modal{
+    position:fixed;
+    left:50%;
+    top:40%;
+    padding:20px;
+    transform: translate(-50%,-50%);
+    background-color:white;
+    height:250px;
+    width:450px;
+    box-shadow: 10px 10px 20px rgba(1,1,1,0.3);
+    border-radius: 5px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}

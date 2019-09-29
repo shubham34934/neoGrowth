@@ -1,0 +1,45 @@
+$bg-color:#FBFCFF;
+$primaryThemeColor-light: #6F51FF;
+$successColor-green: #39B54A;
+$navbar-height:60px;
+$failColor-red:#FF7474;
+$black-color:#333333;
+
+// ................................
+// Flex propteries
+
+@mixin flex{
+    display: flex;
+}
+
+@mixin flexRow{
+    @include flex;
+    flex-direction: row;
+}
+
+
+@mixin flexColumn{
+    @include flex;
+    flex-direction: column;
+}
+
+.appContainer-margin{
+  width:92%;
+  margin:0 auto;
+}
+
+// .............................. 
+// Buttons
+
+@mixin btn{
+    padding:10px;
+    font-size: 10px;
+    width:100%;
+    color:white;
+    font-weight: 700;
+    border: 1px solid rgba(0,0,0,0.07);
+    border-radius: 25px;
+    &:focus{
+        outline:none
+    }
+}

@@ -1,0 +1,32 @@
+
+@import './../../globalCSS/global.scss';
+
+
+.hide{
+  display: none;
+  height:0;
+ }
+.dropDown-container{
+  position:absolute;
+  top:0;
+  left:0;
+  max-width:100%;
+  background-color:$black-color;
+  color:white;
+  transform: translateX(50%);
+  border-radius: 5px;
+  box-shadow: 5px 5px 10px rgba(0,0,0,0.1);
+  padding:10px 0;
+  z-index:100;
+  li{
+    list-style: none;
+    padding:10px 20px;
+    color:#BABABA;
+    border: 1px solid rgba(240,240,240,0.02);
+    &:hover{
+      color:white;
+      background-color: #484848;
+    }
+  }
+}
+

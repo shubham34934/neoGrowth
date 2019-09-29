@@ -1,25 +1,44 @@
 import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import './App.scss';
+import './globalCSS/global.scss';
+import Login from './components/login/login';
+import NavBar from './components/navBar/navBar';
+import InvoiceListContainer from './components/invoiceList/invoiceListContainer';
+import Invoice from './components/invoice/invoice';
+import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
+import {createBrowserHistory} from "history";
+
+
+const history=createBrowserHistory();
 
 function App() {
+    
+  const redirectRoute = localStorage.token? "invoiceList":null ;
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+  <Router history={history}>
+    <div className="app">
+      <Switch>
+        
+        <Route exact path="/" render={()=>
+          <div>
+           <NavBar/>
+           <Login/>
+          </div>}
+        />
+        <Route path="/invoiceList" render={()=>
+          <div>
+            <InvoiceListContainer/>
+          </div>}
+        />   
+        <Route exact path="/invoice" render={()=>
+          <div>
+            <Invoice/>
+          </div>}
+        /> 
+      </Switch>
+  
     </div>
+  </Router>
   );
 }
 

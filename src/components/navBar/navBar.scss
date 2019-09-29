@@ -1,0 +1,66 @@
+@import './../../globalCSS/global.scss';
+
+.navContainer-margin{
+  width:97%;
+  margin:0 auto;
+}
+.navBar-container{
+  width:100%;
+  position: relative;
+  background-color: $primaryThemeColor-light;
+  height:$navbar-height;
+  box-shadow:2px 2px 7px rgba(0,0,0,0.1);
+  display: flex;
+  align-items: center;
+}
+.navBar-content{
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  .navBar-avatar{
+    display: flex;
+    align-items: center;
+    color:white;
+    img{
+      width:35px;
+      height:35px;
+      border-radius: 100%;
+      background-color: aqua;
+      border:2px solid white;
+    }
+    .username{
+      color:white;
+      font-size: 13px;
+      font-weight: 500;
+      margin-right: 10px;
+    }
+    .fa{
+      font-size: 25px;
+      font-weight: 100;
+      margin-left: 12px;
+    }
+  }
+}
+
+.navBar-logo{
+  position: relative;
+  display: flex;
+  background-color:white;
+  border-radius: 6px;
+  align-self: center;
+  width:8%;
+  min-width: 150px;
+  justify-content: center;
+  height:45px;
+  img{
+    align-items: center;
+    max-width: 80%;
+    max-height: $navbar-height;
+    height: auto;
+  }
+}
+.navBar-avatar{
+  position: relative;
+
+}
