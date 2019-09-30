@@ -20,8 +20,8 @@ class InvoiceListContainer extends React.Component {
   constructor(props) {
     super(props);
     this.state={
-      // userDetails:JSON.parse(localStorage.userDetails),
-      userDetails:{userType:"FINANCE"},
+      userDetails:JSON.parse(localStorage.userDetails),
+      // userDetails:{userType:"RA"},
       invoicesData:[],
       filteredInvoices:[],
     }
@@ -63,12 +63,10 @@ class InvoiceListContainer extends React.Component {
         axios.get('http://18.218.231.206/api/finance/invoices', 
           { 
             headers:{"Authorization": `Bearer ${localStorage.token}`},
-            params:{
-              invoice_ra_signatory_id:2
-            }
           }
           )
           .then( resp => {
+            console.log(resp.data)
               if(resp.data !== null){
                 this.setState(
                   {
@@ -86,12 +84,9 @@ class InvoiceListContainer extends React.Component {
                 console.log("Login Error", err)
             })
 
-
-
-
-           else if(this.state.userDetails.userType==="RA2")
+           else if(this.state.userDetails.userType==="RA")
             list=
-            axios.get('http://18.218.231.206/api/ra/invoices', 
+            axios.get('http://18.218.231.206/api/invoices', 
               { 
                 headers:{"Authorization": `Bearer ${localStorage.token}`},
                 params:{
@@ -100,7 +95,7 @@ class InvoiceListContainer extends React.Component {
               }
               )
               .then( resp => {
-                  console.log(resp.data)
+                  console.log(resp.data);
                   if(resp.data !== null){
                     this.setState(
                       {
@@ -133,7 +128,7 @@ class InvoiceListContainer extends React.Component {
           <div className="invoiceList-container">            
               {this.state.userDetails.userType!=="FINANCE"
               ? <div>
-                 <RAInvoiceListHeader userDetails={this.state.userDetails} invoiceList={this.state.invoicesData}  filteredInvoices={this.state.filteredInvoices}/>
+                 <RAInvoiceListHeader getFilteredInvoices={this.getFilteredInvoices} userDetails={this.state.userDetails} invoiceList={this.state.invoicesData}  filteredInvoices={this.state.filteredInvoices}/>
                  <RAInvoiceTable userDetails={this.state.userDetails} invoiceList={this.state.invoicesData}  filteredInvoices={this.state.filteredInvoices}/>         
                 </div>
               : <FinanceInvoiceListContainer userDetails={this.state.userDetails} invoiceList={this.state.invoicesData}  filteredInvoices={this.state.filteredInvoices}/>

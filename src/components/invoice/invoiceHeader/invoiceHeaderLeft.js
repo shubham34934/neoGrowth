@@ -23,7 +23,6 @@ class InvoiceHeaderLeft extends React.Component {
     this.setState({
       status:newStatus
     })
-    console.log(this.state)
   }
 
   statusContent=()=>{

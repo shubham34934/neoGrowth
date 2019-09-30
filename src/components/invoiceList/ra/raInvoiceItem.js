@@ -17,15 +17,15 @@ class RAInvoiceItem extends React.Component {
 
   approvalStatus=()=>{
     if(this.props.userDetails.userType==="RA_SIGNATORY" && this.props.invoiceDetails.invoice_status==="APPROVAL_PENDING")
-      return  <button onClick={()=>this.handleClick("APPROVAL_PENDING")}  className="review-btn">Approve</button>
+      return  <button  className="review-btn">Approve</button>
 
     else if(this.props.userDetails.userType==="RA" && this.props.invoiceDetails.invoice_status==="REVIEW_PENDING")
       return <Pending>Pending</Pending>
     
-    else if(this.props.userDetails.userType==="RA_SIGNATORY" && this.props.invoiceDetails.invoice_status==="REVIEW_PENDING")
+    else if(this.props.userDetails.userType==="RA" && this.props.invoiceDetails.invoice_status==="APPROVAL_PENDING")
       return <Pending>Pending</Pending>
     
-    else return <Success>Approved</Success>
+    else return <Pending>Pending</Pending>
   }
 
   reviewStatus=()=>{
@@ -36,7 +36,7 @@ class RAInvoiceItem extends React.Component {
     else if(this.props.userDetails.userType==="RA_SIGNATORY" && this.props.invoiceDetails.invoice_status==="REVIEW_PENDING")
       return <Pending>Pending</Pending>
     
-    else return <Success>Approved</Success>
+    else return <Success>Reviewed</Success>
   }
 
 
@@ -44,11 +44,11 @@ class RAInvoiceItem extends React.Component {
     const linkStyle={
       textDecoration:"none",
     } 
-    console.log(this.props.invoiceDetails.name)
+    console.log(Date.parse(this.props.invoiceDetails.invoice_date))
     return (    
       <Link style={linkStyle} to={{pathname:"/invoice", state:{invoiceDetails:this.props.invoiceDetails}}}>
         <div className="invoiceItem-card">
-            <div className="card-item">{getInvoiceName(this.props.invoiceDetails.invoice_name)}</div>
+            <div className="card-item">{this.props.invoiceDetails.id}</div>
             <div className="card-item">{this.props.invoiceDetails.invoice_date}</div>
             <div className="card-item">{getDueDate(this.props.invoiceDetails.invoice_date)}</div>
             <div className="card-item">{this.props.invoiceDetails.invoice_amount}</div>

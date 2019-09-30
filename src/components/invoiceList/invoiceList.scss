@@ -96,12 +96,6 @@
 		}
 	}
 	.invoiceItem-header{
-		@media screen and (min-width: 540px) {
-			.invoiceItem-header{
-				display: none
-			}
-			
-	    }
 		@include flexRow;
 		justify-content: space-between;
 		background-color: transparent;
@@ -125,12 +119,6 @@
 			margin-right: 5px;
 		}
 	}
-	@media screen and (min-width: 740px) {
-		.invoiceItem-card{
-			flex-wrap: wrap;
-		}
-		
-	}
   	.invoiceItem-card{
 		@include flexRow;
 		background-color: white;
@@ -153,4 +141,13 @@
 	
 }
 
+.approve-btn{
+	@include btn;
+	width:140px;
+	margin-left: 10px;
+	background-color:$primaryThemeColor-light;
+	color:white;
+	font-size: 12px;
+
+}
 
