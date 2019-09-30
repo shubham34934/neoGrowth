@@ -1,0 +1,28 @@
+@import './../../../globalCSS/global.scss';
+
+.financeSort-btns{
+    .uploadedBtn,.pendingBtn{
+        @include btn;
+        border-radius: 1px;
+        height:30px;
+        line-height: 10px;
+        background-color: $primaryThemeColor-light;
+        border: 1px solid $primaryThemeColor-light;
+        &.disabled{
+            background-color: white;
+            color:$primaryThemeColor-light;
+
+        }
+    }
+ 
+}
+
+.uploadBtn{
+    @include btn;
+    justify-content: flex-end;
+    height:30px;
+    line-height: 10px;
+    width:90px;
+    background-color: $primaryThemeColor-light;
+    border: 1px solid $primaryThemeColor-light;
+}

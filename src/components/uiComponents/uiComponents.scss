@@ -4,6 +4,7 @@
 .reviewed{
     @include flexRow;
     justify-content: flex-start;
+    margin-right: 30px;
     .check-circle{
         height:20px;
         width:20px;
@@ -22,10 +23,32 @@
 .pending-text{
     color:$primaryThemeColor-light;
 }		
+.rejected{
+    @include flexRow;
+    justify-content: flex-start;
+    align-items: center;
+    line-height: 20px;
+    margin-right: 30px;
+    .failure-text{
+        color:$failColor-red;
+        margin-right: 8px;
+    }
+    .cross-circle{
+        background-color:$failColor-red;
+        height:20px;
+        width:20px;
+        border-radius: 100%;
+        color:white;
+        font-weight: 100;
+        text-align: center;
+    }
+    .fa-times{
+        color:white;
+        background-color: transparent;
+    }
 
-.failure-text{
-    color:$failColor-red;
-}	
+}
+	
 
 // Button component
 .btn{

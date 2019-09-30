@@ -34,10 +34,9 @@ class NavBar extends React.Component {
       this.logout();
     else if(menuItem==="Profile")
       this.props.history.push("/invoice");
-
-     this.setState({
-       showAvatarMenu: !this.state.showAvatarMenu
-     })
+    this.setState({
+      showAvatarMenu: !this.state.showAvatarMenu
+    })
   }
 
   render() {
@@ -49,7 +48,7 @@ class NavBar extends React.Component {
           <span className="username">{this.state.userDetails.username}</span>
           <img onClick={this.avatarMenuHandler} src="https://i0.wp.com/zblogged.com/wp-content/uploads/2019/02/FakeDP.jpeg?resize=567%2C580&ssl=1" className="avatar"/>
           <i onClick={this.avatarMenuHandler}  className="fa fa-ellipsis-v"></i>
-          <DropDown show={this.state.showAvatarMenu} top={"50px"} left={"-50px"} width={"250px"}>
+          <DropDown show={this.state.showAvatarMenu} top={"50px"} left={"-75px"} width={"200px"}>
             <ul>
               {avatarMenuItems.map(menuItem=><li key={menuItem} onClick={()=>this.avatarMenuHandler(menuItem)}>{menuItem}</li>)}
             </ul>  
@@ -60,7 +59,7 @@ class NavBar extends React.Component {
       <div className="navBar-container">
         <div className="navContainer-margin">
           <div className="navBar-content">
-            {localStorage.token===null
+            {localStorage.length===0
             ?<Link to = "/" >
               <div className="navBar-logo">
                 <img src={NeoGrowthLogo}/>

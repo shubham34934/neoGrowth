@@ -4,13 +4,13 @@ import './../../../globalCSS/global.scss';
 import './invoiceHeader.scss';
 import InvoiceHeaderLeft from './invoiceHeaderLeft';
 import { Route, Link } from "react-router-dom";
+import {InvoiceSuccessModal,InvoiceRejectionModal, StatusChangeError} from './../invoiceModals/invoiceModals';
+
 
 
 class InvoiceHeaderContainer extends React.Component {
   constructor(props) {
     super(props);   
-    this.state={
-    }
   } 
 
   render() {  

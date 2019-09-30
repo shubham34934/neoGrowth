@@ -10,8 +10,9 @@ class Failure extends React.Component {
 
   render() {  
     return (
-      <div className="failure-text">
-          {this.props.children}
+      <div className="rejected">
+        <p className="failure-text">{this.props.children}</p>
+        <div className="cross-circle"><i className="fa fa-times"></i></div> 
       </div>
     );
   }

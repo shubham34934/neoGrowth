@@ -1,12 +1,12 @@
 import React from 'react';
-import './../../App.scss';
-import './../../globalCSS/global.scss';
-import './invoiceList.scss';
-import InvoiceItem from './invoiceItem';
-import DropDown from './../dropDown/dropDown';
+import './../../../App.scss';
+import './../../../globalCSS/global.scss';
+import './../invoiceList.scss';
+import RAInvoiceItem from './raInvoiceItem';
+import DropDown from './../../dropDown/dropDown';
 import PropTypes from 'prop-types';
 
-class InvoiceTable extends React.Component {
+class RAInvoiceTable extends React.Component {
   constructor(props) {
     super(props);   
     this.state={
@@ -14,16 +14,12 @@ class InvoiceTable extends React.Component {
     }
   } 
 
-  checkBoxHandler=()=>{
-    
-  }
-
   invoices=()=>{
     let invoices=null;
     if(this.props.filteredInvoices!==null){
         invoices=  this.props.filteredInvoices.map((invoice,index) =>{
         return(
-            <InvoiceItem key={index} userDetails={this.props.userDetails} invoiceDetails={invoice}/> 
+            <RAInvoiceItem key={index} userDetails={this.props.userDetails} invoiceDetails={invoice}/> 
         );       
        }
       );  
@@ -33,7 +29,7 @@ class InvoiceTable extends React.Component {
 
   render() {  
     let raName= null
-    if(this.props.userDetails.userType==="raSignatory"){
+    if(this.props.userDetails.userType==="RA_SIGNATORY"){
        raName= <div className="card-item">{"RA Name"}</div>
     }  
     return (
@@ -63,9 +59,9 @@ class InvoiceTable extends React.Component {
   }
 }
 
-InvoiceTable.propTypes = {
+RAInvoiceTable.propTypes = {
   filteredInvoices: PropTypes.array
 }
 
 
-export default InvoiceTable;
+export default RAInvoiceTable;

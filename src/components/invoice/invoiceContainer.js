@@ -5,11 +5,12 @@ import './invoice.scss';
 import { Route, Link } from "react-router-dom";
 import NavBar from './../navBar/navBar';
 import { withRouter } from "react-router-dom";
-import {InvoiceSuccessModal,InvoiceRejectionModal, StatusChangeError} from './invoiceModals/invoiceModals';
 import InvoiceHeaderContainer from './invoiceHeader/invoiceHeaderContainer';
 import InvoiceViewer from './invoiceViewer';
 import InvoiceComment from './invoiceComment';
 import Modal from './../modals/modal';
+import {InvoiceSuccessModal,InvoiceRejectionModal, StatusChangeError} from './invoiceModals/invoiceModals';
+
 
 
 const axios= require('axios');
@@ -53,7 +54,6 @@ class InvoiceContainer extends React.Component {
           apiStatus:"loadingFailed"
         })
       })
-      console.log(newStatus);
   }
 
   

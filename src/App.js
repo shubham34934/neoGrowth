@@ -17,8 +17,7 @@ function App() {
   return (
   <Router history={history}>
     <div className="app">
-      <Switch>
-        
+      <Switch>    
         <Route exact path="/" render={()=>
           <div>
            <NavBar/>

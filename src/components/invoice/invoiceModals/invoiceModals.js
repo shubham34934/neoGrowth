@@ -50,16 +50,17 @@ class InvoiceSuccessModal extends React.Component {
     
     render() {  
        let content = null
-       if(this.state.show) content=
-                                 <Modal show={true}>
-                                  <div className="invoiceReviewed">
-                                        <div className="successStatus">
-                                          <div className="check-circle"><i className="fa fa-check"></i></div>
-                                          <p className="invoiceReviewed-text">You have reviewed invoice successfully</p> 
-                                        </div>
-                                        <button onClick={this.closeModal} className="review-btn">Close</button>
-                                  </div>                
-                                </Modal>
+       if(this.state.show) 
+            content=
+            <Modal show={true}>
+            <div className="invoiceReviewed">
+                  <div className="successStatus">
+                    <div className="check-circle"><i className="fa fa-check"></i></div>
+                    <p className="invoiceReviewed-text">{this.props.children}</p> 
+                  </div>
+                  <button onClick={this.closeModal} className="review-btn">Close</button>
+            </div>                
+          </Modal>
                           
       return (
         <div>
